@@ -95,7 +95,7 @@ extension BQBaseViewModel {
 
 ```
        
-### <a id="XTTableDataDelegate"></a> XTTableDataDelegate中部分代码实现
+### <a id="XTableDataDelegate"></a> XTableDataDelegate中部分代码实现
          
 ```objc
 /**
