@@ -127,7 +127,7 @@ typealias CellItemMargin = ( ) -> UIEdgeInsets
 由于用到了UITableView+FDTemplateLayoutCell，现在创建的cell自动计算高度，满足日常开发需求。
 
 ```objc
-       /**
+  /**
     *  tableView的一些初始化工作
     */
     func setupTableView() {
@@ -157,7 +157,7 @@ typealias CellItemMargin = ( ) -> UIEdgeInsets
 ## <a id="现在的创建collectionView代码"></a>现在的创建collectionView代码
 
 ```objc
-    /**
+  /**
     *  collectionView的一些初始化工作
     */
     func setupCollectionView()
