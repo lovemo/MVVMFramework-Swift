@@ -100,26 +100,14 @@ extension BQBaseViewModel {
          
 ```objc
 /**
- *  配置UITableViewCell的内容Block
- */
-typealias TableViewCellConfigureBlock = (NSIndexPath, AnyObject, UITableViewCell) -> Void
-/**
  *  选中UITableViewCell的Block
  */
 typealias DidSelectTableCellBlock = (NSIndexPath, AnyObject) -> Void
-/**
- *  设置UITableViewCell高度的Block (已集成UITableView+FDTemplateLayoutCell，现在创建的cell自动计算高度)
- */
-typealias CellHeightBlock = (NSIndexPath, AnyObject) -> CGFloat
 ```
 
 ### <a id="XTCollectionDataDeleagte"></a> XTCollectionDataDeleagte中部分代码实现
 
 ```objc
-/**
- *  配置UICollectionViewCell的内容Block
- */
-typealias CollectionViewCellConfigureBlock = (NSIndexPath, AnyObject, UICollectionViewCell) -> Void
 /**
  *  选中UICollectionViewCell的Block
  */
@@ -139,16 +127,11 @@ typealias CellItemMargin = ( ) -> UIEdgeInsets
 由于用到了UITableView+FDTemplateLayoutCell，现在创建的cell自动计算高度，满足日常开发需求。
 
 ```objc
-    /**
+       /**
     *  tableView的一些初始化工作
     */
     func setupTableView() {
         self.table.separatorStyle = .None;
-
-        // 配置tableView的每个cell
-        let configureCell: TableViewCellConfigureBlock = {(indexPath, obj, cell) -> Void in
-            cell.configure(cell, customObj: obj, indexPath: indexPath)
-        }
 
         // 设置点击tableView的每个cell做的一些工作
         let selectedBlock: DidSelectTableCellBlock  = { [weak self] (indexPath, item) -> Void in
@@ -162,9 +145,8 @@ typealias CellItemMargin = ( ) -> UIEdgeInsets
 
         // 将上述block设置给tableHander
         self.tableHander = XTableDataDelegate.init(viewModel: BQViewModel(),
-                                                   cellIdentifier: MyCellIdentifier,
-                                                   configureCellBlock: configureCell,
-                                                   didSelectBlock: selectedBlock)
+                                                                        cellIdentifier: MyCellIdentifier,
+                                                                        didSelectBlock: selectedBlock)
         // 设置UITableView的delegate和dataSourse为collectionHander
         self.tableHander?.handleTableViewDatasourceAndDelegate(self.table)
 
@@ -175,15 +157,12 @@ typealias CellItemMargin = ( ) -> UIEdgeInsets
 ## <a id="现在的创建collectionView代码"></a>现在的创建collectionView代码
 
 ```objc
- /**
+    /**
     *  collectionView的一些初始化工作
     */
     func setupCollectionView()
     {
-        // 配置collectionView的每个item
-        let configureCell: CollectionViewCellConfigureBlock  = {(indexPath,  obj, cell) -> Void in
-            cell.configure(cell, customObj: obj, indexPath: indexPath)
-        }
+    
         // 设置点击collectionView的每个item做的一些工作
         let selectedBlock: DidSelectCollectionCellBlock  = {(indexPath, item) -> Void in
             print("click row : \((indexPath.row))")
@@ -199,17 +178,15 @@ typealias CellItemMargin = ( ) -> UIEdgeInsets
         };
         // 将上述block设置给collectionHander
         self.collectionHander = XTCollectionDataDelegate.init(viewModel: BQViewModel2(),
-                                                              cellIdentifier: MyCellIdentifier2,
-                                                              collectionViewLayout: UICollectionViewFlowLayout(), // 可以使用自定义的UICollectionViewLayout                                                                                   
-                                                              configureCellBlock: configureCell,
-                                                              cellItemSizeBlock: cellItemSizeBlock,
-                                                              cellItemMarginBlock: cellItemMarginBlock,
-                                                              didSelectBlock: selectedBlock)
+                                                                                    cellIdentifier: MyCellIdentifier2,
+                                                                                    collectionViewLayout:UICollectionViewFlowLayout(), // 可用自定义UICollectionViewLayout
+                                                                                    cellItemSizeBlock: cellItemSizeBlock,
+                                                                                    cellItemMarginBlock: cellItemMarginBlock,
+                                                                                    didSelectBlock: selectedBlock)
         // 设置UICollectionView的delegate和dataSourse为collectionHander
         self.collectionHander?.handleCollectionViewDatasourceAndDelegate(self.collectionView)
     
     }
-
 
 ```
 
