@@ -32,6 +32,7 @@ class XTableDataDelegate: NSObject, UITableViewDelegate, UITableViewDataSource {
         self.cellIdentifier = aCellIdentifier
         self.didSelectCellBlock = didselectBlock
     }
+
     /**
      *  设置UITableView的Datasource和Delegate为self
      */
@@ -109,4 +110,3 @@ class XTableDataDelegate: NSObject, UITableViewDelegate, UITableViewDataSource {
     
 }
 
-    

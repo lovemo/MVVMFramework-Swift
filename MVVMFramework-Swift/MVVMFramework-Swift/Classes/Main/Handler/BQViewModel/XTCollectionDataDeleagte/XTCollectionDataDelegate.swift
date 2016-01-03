@@ -46,6 +46,20 @@ class XTCollectionDataDelegate: NSObject, UICollectionViewDelegate, UICollection
     }
     
     /**
+    *  设置UICollectionViewCell大小
+    */
+    func ItemSize(cellItemSize: CellItemSize) {
+        self.cellItemSize = cellItemSize
+    }
+    
+    /**
+    *  设置UICollectionViewCell间隔Margin
+    */
+    func itemInset(cellItemMargin: CellItemMargin) {
+        self.cellItemMargin = cellItemMargin
+    }
+    
+    /**
      *  获取CollectionView中Item所在的indexPath
      */
     func itemAtIndexPath(indexPath: NSIndexPath) -> AnyObject {

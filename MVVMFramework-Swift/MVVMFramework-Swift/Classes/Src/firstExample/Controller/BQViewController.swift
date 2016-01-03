@@ -26,20 +26,16 @@ class BQViewController: UIViewController {
     func setupTableView() {
         self.table.separatorStyle = .None;
 
-        // 设置点击tableView的每个cell做的一些工作
-        let selectedBlock: DidSelectTableCellBlock  = { [weak self] (indexPath, item) -> Void in
+        self.tableHander = XTableDataDelegate.init(viewModel: BQViewModel(), cellIdentifier: MyCellIdentifier, didSelectBlock: {   [weak self] (indexPath, item) -> Void in
+            
             if let strongSelf = self {
                 let sb = UIStoryboard(name: "Main", bundle: nil)
                 let vc = sb.instantiateViewControllerWithIdentifier("ViewController2ID")
                 strongSelf.presentViewController(vc, animated: true, completion: nil)
                 print("click row : \((indexPath.row))")
             }
-        }
-
-        // 将上述block设置给tableHander
-        self.tableHander = XTableDataDelegate.init(viewModel: BQViewModel(),
-                                                                        cellIdentifier: MyCellIdentifier,
-                                                                        didSelectBlock: selectedBlock)
+ 
+        })
         // 设置UITableView的delegate和dataSourse为collectionHander
         self.tableHander?.handleTableViewDatasourceAndDelegate(self.table)
 
