@@ -25,10 +25,7 @@ class BQViewController2: UIViewController {
     */
     func setupCollectionView()
     {
-        // 配置collectionView的每个item
-        let configureCell: CollectionViewCellConfigureBlock  = {(indexPath,  obj, cell) -> Void in
-            cell.configure(cell, customObj: obj, indexPath: indexPath)
-        }
+    
         // 设置点击collectionView的每个item做的一些工作
         let selectedBlock: DidSelectCollectionCellBlock  = {(indexPath, item) -> Void in
             print("click row : \((indexPath.row))")
@@ -45,8 +42,7 @@ class BQViewController2: UIViewController {
         // 将上述block设置给collectionHander
         self.collectionHander = XTCollectionDataDelegate.init(viewModel: BQViewModel2(),
                                                                                     cellIdentifier: MyCellIdentifier2,
-                                                                                    collectionViewLayout: UICollectionViewFlowLayout(), // 可以使用自定义的UICollectionViewLayout                                                                                   
-                                                                                    configureCellBlock: configureCell,
+                                                                                    collectionViewLayout:UICollectionViewFlowLayout(), // 可用自定义UICollectionViewLayout
                                                                                     cellItemSizeBlock: cellItemSizeBlock,
                                                                                     cellItemMarginBlock: cellItemMarginBlock,
                                                                                     didSelectBlock: selectedBlock)

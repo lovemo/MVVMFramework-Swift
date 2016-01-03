@@ -26,11 +26,6 @@ class BQViewController: UIViewController {
     func setupTableView() {
         self.table.separatorStyle = .None;
 
-        // 配置tableView的每个cell
-        let configureCell: TableViewCellConfigureBlock = {(indexPath, obj, cell) -> Void in
-            cell.configure(cell, customObj: obj, indexPath: indexPath)
-        }
-
         // 设置点击tableView的每个cell做的一些工作
         let selectedBlock: DidSelectTableCellBlock  = { [weak self] (indexPath, item) -> Void in
             if let strongSelf = self {
@@ -44,7 +39,6 @@ class BQViewController: UIViewController {
         // 将上述block设置给tableHander
         self.tableHander = XTableDataDelegate.init(viewModel: BQViewModel(),
                                                                         cellIdentifier: MyCellIdentifier,
-                                                                        configureCellBlock: configureCell,
                                                                         didSelectBlock: selectedBlock)
         // 设置UITableView的delegate和dataSourse为collectionHander
         self.tableHander?.handleTableViewDatasourceAndDelegate(self.table)

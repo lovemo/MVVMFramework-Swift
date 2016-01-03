@@ -9,10 +9,6 @@
 import UIKit
 
 /**
- *  配置UICollectionViewCell的内容Block
- */
-typealias CollectionViewCellConfigureBlock = (NSIndexPath, AnyObject, UICollectionViewCell) -> Void
-/**
  *  选中UICollectionViewCell的Block
  */
 typealias DidSelectCollectionCellBlock = (NSIndexPath, AnyObject) -> Void
@@ -31,7 +27,6 @@ class XTCollectionDataDelegate: NSObject, UICollectionViewDelegate, UICollection
     
     var cellIdentifier = ""
     var collectionViewLayout: UICollectionViewLayout
-    var configureCellBlock: CollectionViewCellConfigureBlock
     var didSelectCellBlock: DidSelectCollectionCellBlock
     var cellItemSize: CellItemSize
     var cellItemMargin: CellItemMargin
@@ -40,12 +35,11 @@ class XTCollectionDataDelegate: NSObject, UICollectionViewDelegate, UICollection
     /**
      *  初始化方法
      */
-    init(viewModel: BQBaseViewModel, cellIdentifier aCellIdentifier: String, collectionViewLayout: UICollectionViewLayout, configureCellBlock aConfigureCellBlock: CollectionViewCellConfigureBlock, cellItemSizeBlock cellItemSize: CellItemSize, cellItemMarginBlock cellItemMargin: CellItemMargin, didSelectBlock didselectBlock: DidSelectCollectionCellBlock) {
+    init(viewModel: BQBaseViewModel, cellIdentifier aCellIdentifier: String, collectionViewLayout: UICollectionViewLayout, cellItemSizeBlock cellItemSize: CellItemSize, cellItemMarginBlock cellItemMargin: CellItemMargin, didSelectBlock didselectBlock: DidSelectCollectionCellBlock) {
         
         self.viewModel = viewModel
         self.cellIdentifier = aCellIdentifier
         self.collectionViewLayout = collectionViewLayout
-        self.configureCellBlock = aConfigureCellBlock
         self.cellItemSize = cellItemSize
         self.cellItemMargin = cellItemMargin
         self.didSelectCellBlock = didselectBlock
@@ -127,8 +121,7 @@ class XTCollectionDataDelegate: NSObject, UICollectionViewDelegate, UICollection
         UICollectionViewCell.registerTable(collectionView, nibIdentifier: self.cellIdentifier)
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(self.cellIdentifier, forIndexPath: indexPath)
-        
-        self.configureCellBlock(indexPath, item!, cell)
+        cell.configure(cell, customObj: item!, indexPath: indexPath)
         return cell
     }
     

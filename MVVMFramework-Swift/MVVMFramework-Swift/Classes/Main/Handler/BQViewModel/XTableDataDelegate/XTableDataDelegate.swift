@@ -8,18 +8,11 @@
 
 import UIKit
 
-/**
- *  配置UITableViewCell的内容Block
- */
-typealias TableViewCellConfigureBlock = (NSIndexPath, AnyObject, UITableViewCell) -> Void
+
 /**
  *  选中UITableViewCell的Block
  */
 typealias DidSelectTableCellBlock = (NSIndexPath, AnyObject) -> Void
-/**
- *  设置UITableViewCell高度的Block (已集成UITableView+FDTemplateLayoutCell，现在创建的cell自动计算高度)
- */
-typealias CellHeightBlock = (NSIndexPath, AnyObject) -> CGFloat
 
 
  // - - - - - -- - - - - - - - -- - - - 创建类 - -- - - - - -- -- - - - - -- - - -//
@@ -27,19 +20,16 @@ typealias CellHeightBlock = (NSIndexPath, AnyObject) -> CGFloat
 class XTableDataDelegate: NSObject, UITableViewDelegate, UITableViewDataSource {
     
     var cellIdentifier = ""
-    var configureCellBlock: TableViewCellConfigureBlock?
-    var heightConfigureBlock: CellHeightBlock?
     var didSelectCellBlock: DidSelectTableCellBlock?
     var viewModel: BQBaseViewModel?
     
     /**
      *  初始化方法
      */
-    init(viewModel: BQBaseViewModel, cellIdentifier aCellIdentifier: String, configureCellBlock aConfigureCellBlock: TableViewCellConfigureBlock, didSelectBlock didselectBlock: DidSelectTableCellBlock) {
+    init(viewModel: BQBaseViewModel, cellIdentifier aCellIdentifier: String, didSelectBlock didselectBlock: DidSelectTableCellBlock) {
         
         self.viewModel = viewModel
         self.cellIdentifier = aCellIdentifier
-        self.configureCellBlock = aConfigureCellBlock
         self.didSelectCellBlock = didselectBlock
     }
     /**
@@ -98,8 +88,8 @@ class XTableDataDelegate: NSObject, UITableViewDelegate, UITableViewDataSource {
         if cell == nil {
             UITableViewCell .registerTable(tableView, nibIdentifier: self.cellIdentifier)
         }
-    
-        self.configureCellBlock?(indexPath, item!, cell!)
+        cell?.configure(cell!, customObj: item!, indexPath: indexPath)
+
         return cell!
     }
 
@@ -108,7 +98,7 @@ class XTableDataDelegate: NSObject, UITableViewDelegate, UITableViewDataSource {
         UITableViewCell.registerTable(tableView, nibIdentifier: self.cellIdentifier)
         let item: AnyObject? = self.itemAtIndexPath(indexPath)
         return tableView.fd_heightForCellWithIdentifier(self.cellIdentifier, configuration: { (cell: AnyObject?) -> Void in
-            self.configureCellBlock!(indexPath, item!, cell as! UITableViewCell)
+              cell?.configure(cell! as! UITableViewCell, customObj: item!, indexPath: indexPath)
         })
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
