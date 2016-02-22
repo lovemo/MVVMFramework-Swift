@@ -38,7 +38,7 @@
 ## <a id="代码分析"></a> 代码分析
 ### <a id="BaseViewModel"></a> BaseViewModel中代码实现
 
-```objc
+```swift
 // ViewModel基类
 class BQBaseViewModel: NSObject {
     weak var viewController: UIViewController?
@@ -101,7 +101,7 @@ extension BQBaseViewModel {
        
 ### <a id="XTableDataDelegate"></a> XTableDataDelegate中部分代码实现
          
-```objc
+```swift
 /**
  *  选中UITableViewCell的Block
  */
@@ -110,7 +110,7 @@ typealias DidSelectTableCellBlock = (NSIndexPath, AnyObject) -> Void
 
 ### <a id="XTCollectionDataDeleagte"></a> XTCollectionDataDeleagte中部分代码实现
 
-```objc
+```Swift
 /**
  *  选中UICollectionViewCell的Block
  */
@@ -129,7 +129,7 @@ typealias CellItemMargin = ( ) -> UIEdgeInsets
 ## <a id="现在的创建tableView代码"></a>现在的创建tableView代码
 由于用到了UITableView+FDTemplateLayoutCell，现在创建的cell自动计算高度，满足日常开发需求。
 
-```objc
+```swift
  /**
     *  tableView的一些初始化工作
     */
@@ -155,7 +155,7 @@ typealias CellItemMargin = ( ) -> UIEdgeInsets
 
 ## <a id="现在的创建collectionView代码"></a>现在的创建collectionView代码
 
-```objc
+```swift
   /**
     *  collectionView的一些初始化工作
     */
