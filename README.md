@@ -110,7 +110,7 @@ typealias DidSelectTableCellBlock = (NSIndexPath, AnyObject) -> Void
 
 ### <a id="XTCollectionDataDeleagte"></a> XTCollectionDataDeleagte中部分代码实现
 
-```Swift
+```swift
 /**
  *  选中UICollectionViewCell的Block
  */
