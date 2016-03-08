@@ -101,7 +101,7 @@
 ### viewManger中代码实现
 
 ```swift
-/class FourthViewManger2: NSObject, SMKViewMangerProtocolDelegate {
+class FourthViewManger2: NSObject, SMKViewMangerProtocolDelegate {
 
     lazy var fourthView2 = FourthView2.loadInstanceFromNib()
     lazy var fourthView = UIView()
