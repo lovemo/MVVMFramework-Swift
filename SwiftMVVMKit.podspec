@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name                  = 'SwiftMVVMKit'
-    s.version      = '0.0.1'
+    s.version      = '0.0.2'
     s.summary               = 'SwiftMVVMKit is a MVVM frameWork easy to develop iOS'
     s.homepage              = 'https://github.com/lovemo/MVVMFramework-Swift'
     s.platform     = :ios, '8.0'
@@ -13,14 +13,7 @@ Pod::Spec.new do |s|
 
     s.subspec 'SwiftMVVMKit' do |ss|
     ss.requires_arc = true
-    ss.dependency 'SwiftExtensionKit'
-    ss.dependency 'UITableView+FDTemplateLayoutCell'
-    ss.dependency 'MJRefresh'
-    ss.dependency 'FDFullscreenPopGesture'
-    ss.dependency 'MJExtension'
-    ss.dependency 'SnapKit'
-    ss.dependency 'SUIMVVMStore'
-    ss.dependency 'SUIMVVMNetwork'
+    s.source_files  = 'SwiftMVVMKit/**/*'
     end
 
 end
