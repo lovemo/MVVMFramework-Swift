@@ -3,11 +3,7 @@
 ####本项目交流群：474292335
 ####欢迎有兴趣的有好的想法的参与到项目中来
 ===
-再看了几篇博客后，总结整理下一个快速开发MVVM框架(抛砖引玉)，分离控制器代码，降低代码耦合
-
-终于再也不用为ViewController中一坨坨tableView和collectionView的烦人代码忧虑了
-
-代码加入了cell自适应高度代码，配合MJExtension，MJRefresh，AFNetworking等常用开发框架使用更佳，主要用于分离控制器中的代码，降低代码耦合程度，可以根据自己使用习惯调整代码。欢迎来喷，提issues。
+再看了几篇博客后，总结整理下一个快速开发MVVM框架(抛砖引玉)，主要用于分离控制器中的代码，降低代码耦合程度，可以根据自己使用习惯调整代码。欢迎来喷，提issues。代码加入了cell自适应高度,自动缓存网络请求至sqlite数据库，更加高效的数据库存储库。
 
 ##思维流程图示
 ![image](https://github.com/lovemo/MVVMFramework/raw/master/resources/MVVMFrameWork-Thinking.png)
@@ -18,8 +14,9 @@
 ### <a id="模块构建"></a> 模块构建
   
 * [功能模块中的类集合](#Examples)
-	* [Controller - 负责View和ViewModel之间的绑定，另一方面也负责常规的UI逻辑处理。](#JSON_Model)
+	* [Controller - 负责ViewManger和ViewModel之间的绑定，另一方面也负责常规的UI逻辑处理。](#JSON_Model)
 	* [View - 用来呈现用户界面](#JSONString_Model)
+	* [ViewManger - 用来处理View的常规事件](#Model_contains_model_array)
 	* [Model - 用来呈现数据](#Model_contains_model)
 	* [ViewModel - 存放各种业务逻辑和网络请求](#Model_contains_model_array)
 
@@ -27,177 +24,159 @@
 ---
 
 ### <a id="结构分析"></a> 结构分析
-
-* [Handler中BQViewModel抽象出的类集合](#Handler)
-	* [BaseViewModel 声明了一些基本的方法,负责处理一些系统业务逻辑](#BaseViewModel)
-	* [XTableDataDelegate 遵守并实现了部分tableView的delegate和dataSource中的一些协议方法](#XTableDataDelegate)
-	* [XTCollectionDataDeleagte 遵守并实现了部分collectionView的delegate和dataSource中的一些协议方法](#XTCollectionDataDeleagte)
+* [MVVM中模块的集合](#MVVM)
+	* [Handler 负责处理实现tableView和collectionView的delegate和dataSource中的一些协议方法](#Handler)
+	* [Network 实现常用的网络请求代码](#Network)
+	* [Base 一些基础模块](#Base)
+	* [Extend 扩展系统功能模块](#Extend)
+	* [Store 实现常用的数据存储方法](#Store)
+	* [ViewModel 声明了一些基本的方法,负责处理一些系统业务逻辑](#ViewModel)
+	* [Vender 一些依赖库](#Vender)
 
 ---
 
-## <a id="代码分析"></a> 代码分析
-### <a id="BaseViewModel"></a> BaseViewModel中代码实现
+##部分protocol示例
+```swift
+@objc public protocol SMKViewMangerProtocolDelegate: NSObjectProtocol {
+
+     /**
+     设置Controller的子视图的管理者为self
+     
+     - parameter superView: 一般指subView所在控制器的view
+     
+     - returns: return value description
+     */
+    optional func smk_viewMangerWithSuperView(superView: UIView)
+    
+     /**
+     设置subView的管理者为self
+     
+     - parameter subView: 管理的subView
+     
+     - returns: return value description
+     */
+    optional func smk_viewMangerWithSubView(subView: UIView?)
+    
+     /**
+     设置添加subView的事件
+     
+     - parameter subView: 管理的subView
+     - parameter info:    附带信息，用于区分调用
+     
+     - returns: return value description
+     */
+    optional func smk_viewMangerWithHandleOfSubView(subView: UIView, info: String?)
+    
+     /**
+     返回viewManger所管理的视图
+     
+     - returns: viewManger所管理的视图
+     */
+    optional func smk_viewMangerOfSubView() -> UIView
+    
+     /**
+     得到其它viewManger所管理的subView，用于自己内部
+     
+     - parameter viewInfos: 其它的subViews
+     
+     - returns: return value description
+     */
+    optional func smk_viewMangerWithOtherSubViews(viewInfos: [NSObject : AnyObject]?)
+    
+     /**
+     需要重新布局subView时，更改subView的frame或者约束
+     
+     - parameter updateBlock: 更新布局完成的block
+     */
+    optional func smk_viewMangerWithLayoutSubViews(updateBlock: (( ) -> ( ))?)
+    
+    /**
+     使子视图更新到最新的布局约束或者frame
+     */
+    optional func smk_viewMangerWithUpdateLayoutSubViews()
+}
+```
+
+## <a id="代码示例"></a> 代码示例
+### viewManger中代码实现
 
 ```swift
-// ViewModel基类
-class BQBaseViewModel: NSObject {
-    weak var viewController: UIViewController?
-    /**
-     *  懒加载存放请求到的数据数组
-     */
-    lazy var dataArrayList:NSMutableArray = {
-        return NSMutableArray()
-    }()
-    required override init() {
+class FourthViewManger2: NSObject, SMKViewMangerProtocolDelegate {
 
+    lazy var fourthView2 = FourthView2.loadInstanceFromNib()
+    lazy var fourthView = UIView()
+    
+    func smk_viewMangerWithSuperView(superView: UIView) {
+        superView.addSubview(fourthView2)
     }
 
-    /**
-     *  返回指定indexPath的item
-     */
-    func modelAtIndexPath(indexPath: NSIndexPath) -> AnyObject? {
-        return nil
-    }
-    /**
-     *  显示多少组 (当tableView为Group类型时设置可用)
-     */
-    func numberOfSections() -> Int {
-        return 1
-    }
-    /**
-     *  每组中显示多少行 (用于tableView)
-     */
-    func numberOfRowsInSection(section: Int) -> Int {
-        return 0
-    }
-    /**
-     *  每组中显示多少个 (用于collectionView)
-     */
-    func numberOfItemsInSection(section: Int) -> Int {
-        return 0
-    }
-    /**
-     *  分离加载首页控制器内容 (内部使用)
-     */
-    func getDataList(url: String!, params: [NSObject : AnyObject]!, success: (([AnyObject]!) -> Void)!, failure: ((NSError!) -> Void)!) {
+    // 根据自身需要得到外界的视图view
+    func smk_viewMangerWithOtherSubViews(viewInfos: [NSObject : AnyObject]?) {
         
-    }
-    /**
-     *  用来判断是否加载成功,方便外部根据不同需求处理 (外部使用)
-     */
-    func getDataListSuccess(success: Void -> Void, failure: Void -> Void) {
+        let view1 = viewInfos!["view1"] as! UIView
+        fourthView = view1
+        
+        fourthView2.snp_makeConstraints { (make) -> Void in
+            make.size.equalTo(CGSizeMake(250, 250));
+            make.top.equalTo(view1.snp_bottom).offset(20);
+            make.left.equalTo(view1);
+        }
 
     }
-}
-extension BQBaseViewModel {
-    class func modelWithViewController(viewController: UIViewController) -> Self? {
-        let model = self.init()
-        model.viewController = viewController
-        return model
+    
+    // 根据外界view或model的变化重新布局自己所管理的字视图的位置
+    func smk_viewMangerWithUpdateLayoutSubViews() {
+        let  offset = CGFloat(arc4random_uniform(70) + 10)
+        let  wh = CGFloat(arc4random_uniform(200) + 50)
+        let  size = CGSizeMake(wh, wh)
+        
+        fourthView2.snp_updateConstraints { (make) -> Void in
+            make.top.equalTo(self.fourthView.snp_bottom).offset(offset);
+            make.size.equalTo(size);
+        }
+        
+        fourthView2.setNeedsLayout()
+        UIView.animateWithDuration(0.5) { () -> Void in
+            self.fourthView2.layoutIfNeeded()
+        }
     }
+
 }
 
 ```
        
-### <a id="XTableDataDelegate"></a> XTableDataDelegate中部分代码实现
+### UIViewController中部分代码实现
          
 ```swift
-/**
- *  选中UITableViewCell的Block
- */
-typealias DidSelectTableCellBlock = (NSIndexPath, AnyObject) -> Void
-```
+class FirstVC: UIViewController {
 
-### <a id="XTCollectionDataDeleagte"></a> XTCollectionDataDeleagte中部分代码实现
+    @IBOutlet weak var table: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupTableView()
+    }
 
-```swift
-/**
- *  选中UICollectionViewCell的Block
- */
-typealias DidSelectCollectionCellBlock = (NSIndexPath, AnyObject) -> Void
-/**
- *  设置UICollectionViewCell大小的Block
- */
-typealias CellItemSize = ( ) -> CGSize
-/**
- *  获取UICollectionViewCell间隔Margin的Block
- */
-typealias CellItemMargin = ( ) -> UIEdgeInsets
-
-```
-
-## <a id="现在的创建tableView代码"></a>现在的创建tableView代码
-由于用到了UITableView+FDTemplateLayoutCell，现在创建的cell自动计算高度，满足日常开发需求。
-
-```swift
- /**
-    *  tableView的一些初始化工作
-    */
+    /**
+     tableView的一些初始化工作
+     */
     func setupTableView() {
-        self.table.separatorStyle = .None;
 
-        self.tableHander = XTableDataDelegate.init(viewModel: BQViewModel(), cellIdentifier: MyCellIdentifier, didSelectBlock: {   [weak self] (indexPath, item) -> Void in
-            
-            if let strongSelf = self {
-                let sb = UIStoryboard(name: "Main", bundle: nil)
-                let vc = sb.instantiateViewControllerWithIdentifier("ViewController2ID")
-                strongSelf.presentViewController(vc, animated: true, completion: nil)
-                print("click row : \((indexPath.row))")
-            }
- 
+        self.table.separatorStyle = .None
+        table.tableHander = SMKBaseTableViewManger.init(viewModel: BQViewModel(), cellIdentifiers: [MyCellIdentifier], didSelectBlock: { (_, _) -> Void in
+            let vc = UIViewController.viewControllerWithStoryboardName("Main", vcIdentifier: "SecondVCID")
+            self.navigationController?.pushViewController(vc, animated: true)
         })
-        // 设置UITableView的delegate和dataSourse为collectionHander
-        self.tableHander?.handleTableViewDatasourceAndDelegate(self.table)
-
     }
+}
 
 ```
 
-## <a id="现在的创建collectionView代码"></a>现在的创建collectionView代码
-
-```swift
-  /**
-    *  collectionView的一些初始化工作
-    */
-    func setupCollectionView()
-    {
-    
-        // 设置点击collectionView的每个item做的一些工作
-        let selectedBlock: DidSelectCollectionCellBlock  = {(indexPath, item) -> Void in
-            print("click row : \((indexPath.row))")
-           self.dismissViewControllerAnimated(true, completion: nil)
-        } ;
-        // 配置collectionView的每个item的size
-        let cellItemSizeBlock: CellItemSize  = {
-            return CGSizeMake(110, 120)
-        };
-        // 配置collectionView的每个item的margin
-        let cellItemMarginBlock: CellItemMargin  = {
-            return UIEdgeInsetsMake(0, 20, 0, 20)
-        };
-        // 将上述block设置给collectionHander
-        self.collectionHander = XTCollectionDataDelegate.init(viewModel: BQViewModel2(),
-                                                                                    cellIdentifier: MyCellIdentifier2,
-                                                                                    collectionViewLayout:UICollectionViewFlowLayout(), // 可用自定义UICollectionViewLayout
-                                                                                    cellItemSizeBlock: cellItemSizeBlock,
-                                                                                    cellItemMarginBlock: cellItemMarginBlock,
-                                                                                    didSelectBlock: selectedBlock)
-        // 设置UICollectionView的delegate和dataSourse为collectionHander
-        self.collectionHander?.handleCollectionViewDatasourceAndDelegate(self.collectionView)
-    
-    }
-
-```
 
 ### <a id="demo效果"></a> demo效果
 - 只需实现加载请求以及配置自定义cell和上述代码，就能轻松实现以下效果，最重要的是代码解耦。
 
 ![image](https://github.com/lovemo/MVVMFramework/raw/master/resources/demo.gif)
-
-### <a id="使用方法"></a> 使用方法
-- 导入BQViewModel文件，然后在模块代码中新建ViewModel子类，继承BQBaseViewModel类型，实现加载数据等方法。
-- 在ViewController中，初始化tableView或者collectionView，根据需要实现block代码，利用XTableDataDelegate或者XTCollectionDataDelegate的初始化方法将block代码和自己实现的ViewModel类型传递到内部，将会自动根据传入的内容去展现数据。
-- 利用xib自定义cell，在 override func configure(cell: UITableViewCell, customObj obj: AnyObject, indexPath: NSIndexPath)方法中根据模型Model内容配置cell展示的数据。
 
 ## 期待
 * 如果在使用过程中遇到BUG，希望你能Issues我，谢谢（或者尝试下载最新的代码看看BUG修复没有）
