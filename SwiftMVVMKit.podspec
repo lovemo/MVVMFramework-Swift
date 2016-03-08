@@ -1,0 +1,26 @@
+Pod::Spec.new do |s|
+    s.name                  = 'SwiftMVVMKit'
+    s.version      = '0.0.1'
+    s.summary               = 'SwiftMVVMKit is a MVVM frameWork easy to develop iOS'
+    s.homepage              = 'https://github.com/lovemo/MVVMFramework-Swift'
+    s.platform     = :ios, '8.0'
+    s.license               = 'MIT'
+    s.author                = { 'lovemo' => 'lovemomoyulin@qq.com' }
+    s.source                = { :git => 'https://github.com/lovemo/MVVMFramework-Swift.git',:tag => s.version.to_s }
+    s.requires_arc          = true
+    s.source_files  = 'SwiftMVVMKit/**/*'
+    s.framework             = 'Foundation', 'CoreGraphics', 'UIKit'
+
+    s.subspec 'SwiftMVVMKit' do |ss|
+    ss.requires_arc = true
+    ss.dependency 'SwiftExtensionKit'
+    ss.dependency 'UITableView+FDTemplateLayoutCell'
+    ss.dependency 'MJRefresh'
+    ss.dependency 'FDFullscreenPopGesture'
+    ss.dependency 'MJExtension'
+    ss.dependency 'SnapKit'
+    ss.dependency 'SUIMVVMStore'
+    ss.dependency 'SUIMVVMNetwork'
+    end
+
+end
