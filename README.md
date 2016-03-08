@@ -3,7 +3,15 @@
 ####本项目交流群：474292335
 ####欢迎有兴趣的有好的想法的参与到项目中来
 ===
-再看了几篇博客后，总结整理下一个快速开发MVVM框架(抛砖引玉)，主要用于分离控制器中的代码，降低代码耦合程度，可以根据自己使用习惯调整代码。欢迎来喷，提issues。代码加入了cell自适应高度,自动缓存网络请求至sqlite数据库，更加高效的数据库存储库。
+总结整理下一个快速开发MVVM框架(抛砖引玉)，主要用于分离控制器中的代码，降低代码耦合程度，可以根据自己使用习惯调整代码。欢迎来喷，提issues。代码加入了cell自适应高度,自动缓存网络请求至sqlite数据库，更加高效的数据库存储库。
+
+####usage:
+```
+	platform :ios, '8.0'
+	use_frameworks!
+	pod 'SwiftMVVMKit'
+
+```
 
 ##思维流程图示
 ![image](https://github.com/lovemo/MVVMFramework/raw/master/resources/MVVMFrameWork-Thinking.png)
