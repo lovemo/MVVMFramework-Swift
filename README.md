@@ -182,11 +182,6 @@ class FirstVC: UIViewController {
 
 ![image](https://github.com/lovemo/MVVMFramework/raw/master/resources/demo.gif)
 
-### <a id="使用方法"></a> 使用方法
-- 导入BQViewModel文件，然后在模块代码中新建ViewModel子类，继承BQBaseViewModel类型，实现加载数据等方法。
-- 在ViewController中，初始化tableView或者collectionView，根据需要实现block代码，利用XTableDataDelegate或者XTCollectionDataDelegate的初始化方法将block代码和自己实现的ViewModel类型传递到内部，将会自动根据传入的内容去展现数据。
-- 利用xib自定义cell，在 override func configure(cell: UITableViewCell, customObj obj: AnyObject, indexPath: NSIndexPath)方法中根据模型Model内容配置cell展示的数据。
-
 ## 期待
 * 如果在使用过程中遇到BUG，希望你能Issues我，谢谢（或者尝试下载最新的代码看看BUG修复没有）
 * 如果在使用过程中发现功能不够用，希望你能Issues我，我非常想为这个框架增加更多好用的功能，谢谢
