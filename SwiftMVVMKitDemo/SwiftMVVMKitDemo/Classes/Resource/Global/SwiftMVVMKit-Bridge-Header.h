@@ -9,6 +9,6 @@
 #ifndef SwiftMVVMKit_Bridge_Header_h
 #define SwiftMVVMKit_Bridge_Header_h
 
-#import "SUIMVVMKit.h"
+
 
 #endif /* SwiftMVVMKit_Bridge_Header_h */

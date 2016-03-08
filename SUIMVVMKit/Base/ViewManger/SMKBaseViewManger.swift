@@ -6,7 +6,7 @@
 //  Copyright © 2016年 momo. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class SMKBaseViewManger: NSObject, SMKViewMangerProtocolDelegate {
 

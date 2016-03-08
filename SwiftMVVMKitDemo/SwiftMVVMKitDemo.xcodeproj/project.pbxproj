@@ -19,11 +19,18 @@
 		04578F731C8DB11B003ED896 /* ThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04578F721C8DB11B003ED896 /* ThirdVC.swift */; };
 		04578F751C8DB2C8003ED896 /* FourthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04578F741C8DB2C8003ED896 /* FourthViewModel.swift */; };
 		04578F771C8DB34E003ED896 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 04578F761C8DB34E003ED896 /* libsqlite3.tbd */; };
-		347272E11C8D504700684DBC /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 347272AB1C8D504700684DBC /* UITableView+FDIndexPathHeightCache.m */; };
-		347272E21C8D504700684DBC /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 347272AD1C8D504700684DBC /* UITableView+FDKeyedHeightCache.m */; };
-		347272E31C8D504700684DBC /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 347272AF1C8D504700684DBC /* UITableView+FDTemplateLayoutCell.m */; };
-		347272E41C8D504700684DBC /* UITableView+FDTemplateLayoutCellDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 347272B11C8D504700684DBC /* UITableView+FDTemplateLayoutCellDebug.m */; };
-		347272E61C8D512600684DBC /* SMKBaseCollectionViewManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347272E51C8D512600684DBC /* SMKBaseCollectionViewManger.swift */; };
+		341692A91C8E94290047B11E /* SMKBaseCollectionViewManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341692991C8E94290047B11E /* SMKBaseCollectionViewManger.swift */; };
+		341692AA1C8E94290047B11E /* SMKBaseTableViewManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3416929A1C8E94290047B11E /* SMKBaseTableViewManger.swift */; };
+		341692AB1C8E94290047B11E /* SMKBaseViewManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3416929B1C8E94290047B11E /* SMKBaseViewManger.swift */; };
+		341692AC1C8E94290047B11E /* SMKBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3416929D1C8E94290047B11E /* SMKBaseViewModel.swift */; };
+		341692AD1C8E94290047B11E /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3416929F1C8E94290047B11E /* UICollectionView+Extension.swift */; };
+		341692AE1C8E94290047B11E /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341692A01C8E94290047B11E /* UICollectionViewCell+Extension.swift */; };
+		341692AF1C8E94290047B11E /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341692A11C8E94290047B11E /* UITableView+Extension.swift */; };
+		341692B01C8E94290047B11E /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341692A21C8E94290047B11E /* UITableViewCell+Extension.swift */; };
+		341692B11C8E94290047B11E /* UIView+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341692A31C8E94290047B11E /* UIView+Configure.swift */; };
+		341692B21C8E94290047B11E /* SMKViewMangerProtocolDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341692A61C8E94290047B11E /* SMKViewMangerProtocolDelegate.swift */; };
+		341692B31C8E94290047B11E /* SMKViewModelProtocolDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341692A71C8E94290047B11E /* SMKViewModelProtocolDelegate.swift */; };
+		341692B41C8E94290047B11E /* SMKViewProtocolDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341692A81C8E94290047B11E /* SMKViewProtocolDelegate.swift */; };
 		347273571C8D545A00684DBC /* BHNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 347272F21C8D545A00684DBC /* BHNavViewController.m */; };
 		347273581C8D545A00684DBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347272FC1C8D545A00684DBC /* AppDelegate.swift */; };
 		3472735D1C8D545A00684DBC /* BQCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3472730F1C8D545A00684DBC /* BQCell.xib */; };
@@ -32,17 +39,6 @@
 		3472736C1C8D545A00684DBC /* BQCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 347273391C8D545A00684DBC /* BQCollectionCell.xib */; };
 		347273721C8D545A00684DBC /* ThirdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 347273491C8D545A00684DBC /* ThirdView.xib */; };
 		347273751C8D545A00684DBC /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 347273511C8D545A00684DBC /* Foundation+Log.m */; };
-		347274B91C8D568500684DBC /* SMKBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347274B81C8D568500684DBC /* SMKBaseViewModel.swift */; };
-		347274BB1C8D570500684DBC /* SMKViewModelProtocolDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347274BA1C8D570500684DBC /* SMKViewModelProtocolDelegate.swift */; };
-		347274BD1C8D5BF100684DBC /* SMKViewProtocolDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347274BC1C8D5BF100684DBC /* SMKViewProtocolDelegate.swift */; };
-		347274BF1C8D5D7E00684DBC /* SMKViewMangerProtocolDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347274BE1C8D5D7E00684DBC /* SMKViewMangerProtocolDelegate.swift */; };
-		347274C11C8D5F9300684DBC /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347274C01C8D5F9300684DBC /* UICollectionViewCell+Extension.swift */; };
-		347274C31C8D600400684DBC /* SMKBaseViewManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347274C21C8D600400684DBC /* SMKBaseViewManger.swift */; };
-		347274C71C8D611000684DBC /* SMKBaseTableViewManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347274C61C8D611000684DBC /* SMKBaseTableViewManger.swift */; };
-		347274C91C8D616100684DBC /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347274C81C8D616100684DBC /* UITableViewCell+Extension.swift */; };
-		347274CB1C8D684600684DBC /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347274CA1C8D684600684DBC /* UICollectionView+Extension.swift */; };
-		347274CD1C8D690100684DBC /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347274CC1C8D690100684DBC /* UITableView+Extension.swift */; };
-		347274CF1C8D694300684DBC /* UIView+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347274CE1C8D694300684DBC /* UIView+Configure.swift */; };
 		347274D11C8D6B8500684DBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 347274D01C8D6B8500684DBC /* Main.storyboard */; };
 		347274D71C8D6BDF00684DBC /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347274D61C8D6BDF00684DBC /* FirstVC.swift */; };
 		347274DD1C8D745800684DBC /* BQViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347274DC1C8D745800684DBC /* BQViewModel.swift */; };
@@ -81,20 +77,19 @@
 		04578F741C8DB2C8003ED896 /* FourthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewModel.swift; sourceTree = "<group>"; };
 		04578F761C8DB34E003ED896 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		3041205DE2D15485DFFA4E02 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		341692991C8E94290047B11E /* SMKBaseCollectionViewManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMKBaseCollectionViewManger.swift; sourceTree = "<group>"; };
+		3416929A1C8E94290047B11E /* SMKBaseTableViewManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMKBaseTableViewManger.swift; sourceTree = "<group>"; };
+		3416929B1C8E94290047B11E /* SMKBaseViewManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMKBaseViewManger.swift; sourceTree = "<group>"; };
+		3416929D1C8E94290047B11E /* SMKBaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMKBaseViewModel.swift; sourceTree = "<group>"; };
+		3416929F1C8E94290047B11E /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		341692A01C8E94290047B11E /* UICollectionViewCell+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
+		341692A11C8E94290047B11E /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		341692A21C8E94290047B11E /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		341692A31C8E94290047B11E /* UIView+Configure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Configure.swift"; sourceTree = "<group>"; };
+		341692A61C8E94290047B11E /* SMKViewMangerProtocolDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMKViewMangerProtocolDelegate.swift; sourceTree = "<group>"; };
+		341692A71C8E94290047B11E /* SMKViewModelProtocolDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMKViewModelProtocolDelegate.swift; sourceTree = "<group>"; };
+		341692A81C8E94290047B11E /* SMKViewProtocolDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMKViewProtocolDelegate.swift; sourceTree = "<group>"; };
 		3472718C1C8D501500684DBC /* SwiftMVVMKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftMVVMKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3472723F1C8D504600684DBC /* SMKConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKConstant.h; sourceTree = "<group>"; };
-		347272401C8D504600684DBC /* SMKSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKSingleton.h; sourceTree = "<group>"; };
-		347272421C8D504600684DBC /* SMKExtendPublic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKExtendPublic.h; sourceTree = "<group>"; };
-		347272541C8D504600684DBC /* SUIMVVMKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUIMVVMKit.h; sourceTree = "<group>"; };
-		347272AA1C8D504700684DBC /* UITableView+FDIndexPathHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDIndexPathHeightCache.h"; sourceTree = "<group>"; };
-		347272AB1C8D504700684DBC /* UITableView+FDIndexPathHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDIndexPathHeightCache.m"; sourceTree = "<group>"; };
-		347272AC1C8D504700684DBC /* UITableView+FDKeyedHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDKeyedHeightCache.h"; sourceTree = "<group>"; };
-		347272AD1C8D504700684DBC /* UITableView+FDKeyedHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDKeyedHeightCache.m"; sourceTree = "<group>"; };
-		347272AE1C8D504700684DBC /* UITableView+FDTemplateLayoutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCell.h"; sourceTree = "<group>"; };
-		347272AF1C8D504700684DBC /* UITableView+FDTemplateLayoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCell.m"; sourceTree = "<group>"; };
-		347272B01C8D504700684DBC /* UITableView+FDTemplateLayoutCellDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCellDebug.h"; sourceTree = "<group>"; };
-		347272B11C8D504700684DBC /* UITableView+FDTemplateLayoutCellDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCellDebug.m"; sourceTree = "<group>"; };
-		347272E51C8D512600684DBC /* SMKBaseCollectionViewManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMKBaseCollectionViewManger.swift; sourceTree = "<group>"; };
 		347272EB1C8D545A00684DBC /* CategoryPublicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryPublicHeader.h; sourceTree = "<group>"; };
 		347272ED1C8D545A00684DBC /* ConstantPublicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantPublicHeader.h; sourceTree = "<group>"; };
 		347272F11C8D545A00684DBC /* BHNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHNavViewController.h; sourceTree = "<group>"; };
@@ -113,17 +108,6 @@
 		347273511C8D545A00684DBC /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		347273541C8D545A00684DBC /* LibraryPublicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryPublicHeader.h; sourceTree = "<group>"; };
 		347273561C8D545A00684DBC /* SDKFilePublicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKFilePublicHeader.h; sourceTree = "<group>"; };
-		347274B81C8D568500684DBC /* SMKBaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMKBaseViewModel.swift; sourceTree = "<group>"; };
-		347274BA1C8D570500684DBC /* SMKViewModelProtocolDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMKViewModelProtocolDelegate.swift; sourceTree = "<group>"; };
-		347274BC1C8D5BF100684DBC /* SMKViewProtocolDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMKViewProtocolDelegate.swift; sourceTree = "<group>"; };
-		347274BE1C8D5D7E00684DBC /* SMKViewMangerProtocolDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMKViewMangerProtocolDelegate.swift; sourceTree = "<group>"; };
-		347274C01C8D5F9300684DBC /* UICollectionViewCell+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
-		347274C21C8D600400684DBC /* SMKBaseViewManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMKBaseViewManger.swift; sourceTree = "<group>"; };
-		347274C61C8D611000684DBC /* SMKBaseTableViewManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMKBaseTableViewManger.swift; sourceTree = "<group>"; };
-		347274C81C8D616100684DBC /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
-		347274CA1C8D684600684DBC /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
-		347274CC1C8D690100684DBC /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
-		347274CE1C8D694300684DBC /* UIView+Configure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Configure.swift"; sourceTree = "<group>"; };
 		347274D01C8D6B8500684DBC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		347274D61C8D6BDF00684DBC /* FirstVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
 		347274DC1C8D745800684DBC /* BQViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BQViewModel.swift; sourceTree = "<group>"; };
@@ -187,6 +171,73 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		341692961C8E94290047B11E /* SUIMVVMKit */ = {
+			isa = PBXGroup;
+			children = (
+				341692971C8E94290047B11E /* Base */,
+				3416929E1C8E94290047B11E /* Extend */,
+				341692A41C8E94290047B11E /* Handler */,
+				341692A51C8E94290047B11E /* Protocol */,
+			);
+			path = SUIMVVMKit;
+			sourceTree = "<group>";
+		};
+		341692971C8E94290047B11E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				341692981C8E94290047B11E /* ViewManger */,
+				3416929C1C8E94290047B11E /* ViewModel */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		341692981C8E94290047B11E /* ViewManger */ = {
+			isa = PBXGroup;
+			children = (
+				341692991C8E94290047B11E /* SMKBaseCollectionViewManger.swift */,
+				3416929A1C8E94290047B11E /* SMKBaseTableViewManger.swift */,
+				3416929B1C8E94290047B11E /* SMKBaseViewManger.swift */,
+			);
+			path = ViewManger;
+			sourceTree = "<group>";
+		};
+		3416929C1C8E94290047B11E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3416929D1C8E94290047B11E /* SMKBaseViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3416929E1C8E94290047B11E /* Extend */ = {
+			isa = PBXGroup;
+			children = (
+				3416929F1C8E94290047B11E /* UICollectionView+Extension.swift */,
+				341692A01C8E94290047B11E /* UICollectionViewCell+Extension.swift */,
+				341692A11C8E94290047B11E /* UITableView+Extension.swift */,
+				341692A21C8E94290047B11E /* UITableViewCell+Extension.swift */,
+				341692A31C8E94290047B11E /* UIView+Configure.swift */,
+			);
+			path = Extend;
+			sourceTree = "<group>";
+		};
+		341692A41C8E94290047B11E /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Handler;
+			sourceTree = "<group>";
+		};
+		341692A51C8E94290047B11E /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				341692A61C8E94290047B11E /* SMKViewMangerProtocolDelegate.swift */,
+				341692A71C8E94290047B11E /* SMKViewModelProtocolDelegate.swift */,
+				341692A81C8E94290047B11E /* SMKViewProtocolDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		347271831C8D501500684DBC = {
 			isa = PBXGroup;
 			children = (
@@ -208,121 +259,10 @@
 		3472718E1C8D501500684DBC /* SwiftMVVMKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				341692961C8E94290047B11E /* SUIMVVMKit */,
 				347272E81C8D545A00684DBC /* Classes */,
-				347272311C8D504600684DBC /* SUIMVVMKit */,
 			);
 			path = SwiftMVVMKitDemo;
-			sourceTree = "<group>";
-		};
-		347272311C8D504600684DBC /* SUIMVVMKit */ = {
-			isa = PBXGroup;
-			children = (
-				347272321C8D504600684DBC /* SUIMVVMKit */,
-				347272541C8D504600684DBC /* SUIMVVMKit.h */,
-				347272551C8D504600684DBC /* Vender */,
-			);
-			path = SUIMVVMKit;
-			sourceTree = "<group>";
-		};
-		347272321C8D504600684DBC /* SUIMVVMKit */ = {
-			isa = PBXGroup;
-			children = (
-				347272331C8D504600684DBC /* Base */,
-				3472723E1C8D504600684DBC /* Constant */,
-				347272411C8D504600684DBC /* Extend */,
-				3472724F1C8D504600684DBC /* Handler */,
-				347272501C8D504600684DBC /* Protocol */,
-			);
-			path = SUIMVVMKit;
-			sourceTree = "<group>";
-		};
-		347272331C8D504600684DBC /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				347272341C8D504600684DBC /* ViewManger */,
-				3472723B1C8D504600684DBC /* ViewModel */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		347272341C8D504600684DBC /* ViewManger */ = {
-			isa = PBXGroup;
-			children = (
-				347274C61C8D611000684DBC /* SMKBaseTableViewManger.swift */,
-				347272E51C8D512600684DBC /* SMKBaseCollectionViewManger.swift */,
-				347274C21C8D600400684DBC /* SMKBaseViewManger.swift */,
-			);
-			path = ViewManger;
-			sourceTree = "<group>";
-		};
-		3472723B1C8D504600684DBC /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				347274B81C8D568500684DBC /* SMKBaseViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		3472723E1C8D504600684DBC /* Constant */ = {
-			isa = PBXGroup;
-			children = (
-				3472723F1C8D504600684DBC /* SMKConstant.h */,
-				347272401C8D504600684DBC /* SMKSingleton.h */,
-			);
-			path = Constant;
-			sourceTree = "<group>";
-		};
-		347272411C8D504600684DBC /* Extend */ = {
-			isa = PBXGroup;
-			children = (
-				347272421C8D504600684DBC /* SMKExtendPublic.h */,
-				347274C01C8D5F9300684DBC /* UICollectionViewCell+Extension.swift */,
-				347274C81C8D616100684DBC /* UITableViewCell+Extension.swift */,
-				347274CA1C8D684600684DBC /* UICollectionView+Extension.swift */,
-				347274CC1C8D690100684DBC /* UITableView+Extension.swift */,
-				347274CE1C8D694300684DBC /* UIView+Configure.swift */,
-			);
-			path = Extend;
-			sourceTree = "<group>";
-		};
-		3472724F1C8D504600684DBC /* Handler */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Handler;
-			sourceTree = "<group>";
-		};
-		347272501C8D504600684DBC /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				347274BA1C8D570500684DBC /* SMKViewModelProtocolDelegate.swift */,
-				347274BC1C8D5BF100684DBC /* SMKViewProtocolDelegate.swift */,
-				347274BE1C8D5D7E00684DBC /* SMKViewMangerProtocolDelegate.swift */,
-			);
-			path = Protocol;
-			sourceTree = "<group>";
-		};
-		347272551C8D504600684DBC /* Vender */ = {
-			isa = PBXGroup;
-			children = (
-				347272A91C8D504700684DBC /* UITableView+FDTemplateLayoutCell */,
-			);
-			path = Vender;
-			sourceTree = "<group>";
-		};
-		347272A91C8D504700684DBC /* UITableView+FDTemplateLayoutCell */ = {
-			isa = PBXGroup;
-			children = (
-				347272AA1C8D504700684DBC /* UITableView+FDIndexPathHeightCache.h */,
-				347272AB1C8D504700684DBC /* UITableView+FDIndexPathHeightCache.m */,
-				347272AC1C8D504700684DBC /* UITableView+FDKeyedHeightCache.h */,
-				347272AD1C8D504700684DBC /* UITableView+FDKeyedHeightCache.m */,
-				347272AE1C8D504700684DBC /* UITableView+FDTemplateLayoutCell.h */,
-				347272AF1C8D504700684DBC /* UITableView+FDTemplateLayoutCell.m */,
-				347272B01C8D504700684DBC /* UITableView+FDTemplateLayoutCellDebug.h */,
-				347272B11C8D504700684DBC /* UITableView+FDTemplateLayoutCellDebug.m */,
-			);
-			path = "UITableView+FDTemplateLayoutCell";
 			sourceTree = "<group>";
 		};
 		347272E81C8D545A00684DBC /* Classes */ = {
@@ -876,43 +816,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				04578F731C8DB11B003ED896 /* ThirdVC.swift in Sources */,
-				347274C71C8D611000684DBC /* SMKBaseTableViewManger.swift in Sources */,
+				341692A91C8E94290047B11E /* SMKBaseCollectionViewManger.swift in Sources */,
 				347274FB1C8D89E400684DBC /* ThirdModel.swift in Sources */,
-				347272E11C8D504700684DBC /* UITableView+FDIndexPathHeightCache.m in Sources */,
-				347274C11C8D5F9300684DBC /* UICollectionViewCell+Extension.swift in Sources */,
 				347274E11C8D776100684DBC /* BQCell.swift in Sources */,
 				347274FF1C8D8A8600684DBC /* ThirdView.swift in Sources */,
-				347274BD1C8D5BF100684DBC /* SMKViewProtocolDelegate.swift in Sources */,
 				347274F11C8D85A000684DBC /* SecondVC.swift in Sources */,
+				341692AE1C8E94290047B11E /* UICollectionViewCell+Extension.swift in Sources */,
+				341692AC1C8E94290047B11E /* SMKBaseViewModel.swift in Sources */,
 				347273751C8D545A00684DBC /* Foundation+Log.m in Sources */,
+				341692AD1C8E94290047B11E /* UICollectionView+Extension.swift in Sources */,
 				347274D71C8D6BDF00684DBC /* FirstVC.swift in Sources */,
 				347274E91C8D7A8800684DBC /* FourthView.swift in Sources */,
+				341692AB1C8E94290047B11E /* SMKBaseViewManger.swift in Sources */,
 				347274EB1C8D7E2B00684DBC /* FourthView2.swift in Sources */,
 				04578F711C8DADE9003ED896 /* ThirdViewModel.swift in Sources */,
+				341692B31C8E94290047B11E /* SMKViewModelProtocolDelegate.swift in Sources */,
 				347274EF1C8D850500684DBC /* FourthModel.swift in Sources */,
 				347274F31C8D862B00684DBC /* BQTestModel.swift in Sources */,
+				341692B21C8E94290047B11E /* SMKViewMangerProtocolDelegate.swift in Sources */,
+				341692AF1C8E94290047B11E /* UITableView+Extension.swift in Sources */,
+				341692B01C8E94290047B11E /* UITableViewCell+Extension.swift in Sources */,
 				04578F751C8DB2C8003ED896 /* FourthViewModel.swift in Sources */,
-				347274BB1C8D570500684DBC /* SMKViewModelProtocolDelegate.swift in Sources */,
+				341692AA1C8E94290047B11E /* SMKBaseTableViewManger.swift in Sources */,
 				347274E71C8D7A5700684DBC /* FourthViewManger.swift in Sources */,
-				347274BF1C8D5D7E00684DBC /* SMKViewMangerProtocolDelegate.swift in Sources */,
-				347274CF1C8D694300684DBC /* UIView+Configure.swift in Sources */,
-				347274B91C8D568500684DBC /* SMKBaseViewModel.swift in Sources */,
 				347274FD1C8D8A1C00684DBC /* ThirdViewManger.swift in Sources */,
-				347272E21C8D504700684DBC /* UITableView+FDKeyedHeightCache.m in Sources */,
+				341692B11C8E94290047B11E /* UIView+Configure.swift in Sources */,
 				347274F91C8D870500684DBC /* BQViewModel2.swift in Sources */,
 				347274ED1C8D7E6400684DBC /* FourthViewManger2.swift in Sources */,
-				347272E41C8D504700684DBC /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
-				347272E31C8D504700684DBC /* UITableView+FDTemplateLayoutCell.m in Sources */,
-				347274CB1C8D684600684DBC /* UICollectionView+Extension.swift in Sources */,
+				341692B41C8E94290047B11E /* SMKViewProtocolDelegate.swift in Sources */,
 				347274E51C8D798F00684DBC /* FourthVC.swift in Sources */,
-				347274C91C8D616100684DBC /* UITableViewCell+Extension.swift in Sources */,
 				347274DF1C8D757600684DBC /* FirstModel.swift in Sources */,
-				347272E61C8D512600684DBC /* SMKBaseCollectionViewManger.swift in Sources */,
 				347273581C8D545A00684DBC /* AppDelegate.swift in Sources */,
 				347274F71C8D869700684DBC /* BQCollectionCell.swift in Sources */,
-				347274CD1C8D690100684DBC /* UITableView+Extension.swift in Sources */,
 				347274DD1C8D745800684DBC /* BQViewModel.swift in Sources */,
-				347274C31C8D600400684DBC /* SMKBaseViewManger.swift in Sources */,
 				347273571C8D545A00684DBC /* BHNavViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

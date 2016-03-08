@@ -34,6 +34,7 @@ PODS:
   - SUIMVVMStore/YTKKeyValueStore (0.0.8):
     - FMDB
   - SwiftExtensionKit (0.0.2)
+  - UITableView+FDTemplateLayoutCell (1.4)
 
 DEPENDENCIES:
   - AFNetworking
@@ -43,6 +44,7 @@ DEPENDENCIES:
   - SnapKit
   - SUIMVVMNetwork
   - SwiftExtensionKit
+  - UITableView+FDTemplateLayoutCell
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
@@ -54,5 +56,6 @@ SPEC CHECKSUMS:
   SUIMVVMNetwork: 68310f14b8b6361620fb3f30052d8ea283d99fd9
   SUIMVVMStore: a393af1cc70ecec19e571791e7f143e023f21fac
   SwiftExtensionKit: 6f7592062c2d50232d3f437df0103deb5af0cfdd
+  UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
 
 COCOAPODS: 0.39.0

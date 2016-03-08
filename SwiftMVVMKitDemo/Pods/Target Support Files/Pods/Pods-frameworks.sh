@@ -93,6 +93,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/SUIMVVMStore.framework"
   install_framework "Pods/SnapKit.framework"
   install_framework "Pods/SwiftExtensionKit.framework"
+  install_framework "Pods/UITableView_FDTemplateLayoutCell.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/AFNetworking.framework"
@@ -104,4 +105,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/SUIMVVMStore.framework"
   install_framework "Pods/SnapKit.framework"
   install_framework "Pods/SwiftExtensionKit.framework"
+  install_framework "Pods/UITableView_FDTemplateLayoutCell.framework"
 fi

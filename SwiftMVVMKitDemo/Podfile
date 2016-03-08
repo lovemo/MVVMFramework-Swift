@@ -7,6 +7,6 @@ pod 'MJExtension'
 pod 'SUIMVVMNetwork' 
 pod 'MJRefresh'
 pod 'SwiftExtensionKit'
-
+pod 'UITableView+FDTemplateLayoutCell'
 source 'https://github.com/CocoaPods/Specs.git'
 pod 'SnapKit'

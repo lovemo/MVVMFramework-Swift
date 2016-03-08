@@ -8,6 +8,7 @@
 
 import UIKit
 import MJRefresh
+import UITableView_FDTemplateLayoutCell
 
 /// 选中UITableViewCell的Block
 typealias didSelectTableCellBlock = (NSIndexPath, AnyObject) -> Void
