@@ -1,6 +1,6 @@
 //
-//  UIView+Extension.swift
-//  SwiftMVVMKitDemo
+//  SEKView+UIViewController.swift
+//  SwiftExtensionKitDemo
 //
 //  Created by yuantao on 16/3/8.
 //  Copyright © 2016年 momo. All rights reserved.
@@ -14,7 +14,7 @@ public extension UIView {
      
      - returns: UIViewController
      */
-    public func smk_viewController() -> UIViewController? {
+    public func viewController() -> UIViewController? {
         var next: UIView?
         for next = self.superview; (next != nil); next = next!.superview {
             let nextResponder = next!.nextResponder()

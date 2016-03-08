@@ -27,7 +27,7 @@ class FirstVC: UIViewController {
 
         self.table.separatorStyle = .None
         table.tableHander = SMKBaseTableViewManger.init(viewModel: BQViewModel(), cellIdentifiers: [MyCellIdentifier], didSelectBlock: { (_, _) -> Void in
-            let vc = UIViewController.smk_viewControllerWithStoryboardName("Main", vcIdentifier: "SecondVCID")
+            let vc = UIViewController.viewControllerWithStoryboardName("Main", vcIdentifier: "SecondVCID")
             self.navigationController?.pushViewController(vc, animated: true)
         })
     }

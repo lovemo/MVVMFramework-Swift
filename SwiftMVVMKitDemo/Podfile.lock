@@ -33,7 +33,7 @@ PODS:
     - SUIMVVMStore/YTKKeyValueStore
   - SUIMVVMStore/YTKKeyValueStore (0.0.8):
     - FMDB
-  - SwiftExtensionKit (0.0.1)
+  - SwiftExtensionKit (0.0.2)
 
 DEPENDENCIES:
   - AFNetworking
@@ -53,6 +53,6 @@ SPEC CHECKSUMS:
   SnapKit: eff58d6e3451bf2f482db2eccf86aecf371dc62d
   SUIMVVMNetwork: 68310f14b8b6361620fb3f30052d8ea283d99fd9
   SUIMVVMStore: a393af1cc70ecec19e571791e7f143e023f21fac
-  SwiftExtensionKit: d82b05a81896f98f9271490744f251fa224abf63
+  SwiftExtensionKit: 6f7592062c2d50232d3f437df0103deb5af0cfdd
 
 COCOAPODS: 0.39.0

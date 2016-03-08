@@ -33,8 +33,8 @@ class ThirdViewManger: SMKBaseViewManger, SMKViewProtocolDelegate {
         print("----------\(events)")
         for key in events!.keys {
             if key == "jump" {
-                let firstVC = UIViewController.smk_viewControllerWithStoryboardName("Main", vcIdentifier: "FirstVCID")
-                view.smk_viewController()?.navigationController?.pushViewController(firstVC, animated: true)
+                let firstVC = UIViewController.viewControllerWithStoryboardName("Main", vcIdentifier: "FirstVCID")
+                view.viewController()?.navigationController?.pushViewController(firstVC, animated: true)
             }
         }
 

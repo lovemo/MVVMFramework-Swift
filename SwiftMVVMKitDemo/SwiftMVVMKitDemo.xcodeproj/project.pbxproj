@@ -19,8 +19,6 @@
 		04578F731C8DB11B003ED896 /* ThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04578F721C8DB11B003ED896 /* ThirdVC.swift */; };
 		04578F751C8DB2C8003ED896 /* FourthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04578F741C8DB2C8003ED896 /* FourthViewModel.swift */; };
 		04578F771C8DB34E003ED896 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 04578F761C8DB34E003ED896 /* libsqlite3.tbd */; };
-		3416928F1C8E76680047B11E /* UIViewConrtroller+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3416928E1C8E76680047B11E /* UIViewConrtroller+Extension.swift */; };
-		341692911C8E78260047B11E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341692901C8E78260047B11E /* UIView+Extension.swift */; };
 		347272E11C8D504700684DBC /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 347272AB1C8D504700684DBC /* UITableView+FDIndexPathHeightCache.m */; };
 		347272E21C8D504700684DBC /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 347272AD1C8D504700684DBC /* UITableView+FDKeyedHeightCache.m */; };
 		347272E31C8D504700684DBC /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 347272AF1C8D504700684DBC /* UITableView+FDTemplateLayoutCell.m */; };
@@ -83,8 +81,6 @@
 		04578F741C8DB2C8003ED896 /* FourthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewModel.swift; sourceTree = "<group>"; };
 		04578F761C8DB34E003ED896 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		3041205DE2D15485DFFA4E02 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3416928E1C8E76680047B11E /* UIViewConrtroller+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewConrtroller+Extension.swift"; sourceTree = "<group>"; };
-		341692901C8E78260047B11E /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		3472718C1C8D501500684DBC /* SwiftMVVMKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftMVVMKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3472723F1C8D504600684DBC /* SMKConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKConstant.h; sourceTree = "<group>"; };
 		347272401C8D504600684DBC /* SMKSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKSingleton.h; sourceTree = "<group>"; };
@@ -285,8 +281,6 @@
 				347274CA1C8D684600684DBC /* UICollectionView+Extension.swift */,
 				347274CC1C8D690100684DBC /* UITableView+Extension.swift */,
 				347274CE1C8D694300684DBC /* UIView+Configure.swift */,
-				3416928E1C8E76680047B11E /* UIViewConrtroller+Extension.swift */,
-				341692901C8E78260047B11E /* UIView+Extension.swift */,
 			);
 			path = Extend;
 			sourceTree = "<group>";
@@ -893,7 +887,6 @@
 				347273751C8D545A00684DBC /* Foundation+Log.m in Sources */,
 				347274D71C8D6BDF00684DBC /* FirstVC.swift in Sources */,
 				347274E91C8D7A8800684DBC /* FourthView.swift in Sources */,
-				341692911C8E78260047B11E /* UIView+Extension.swift in Sources */,
 				347274EB1C8D7E2B00684DBC /* FourthView2.swift in Sources */,
 				04578F711C8DADE9003ED896 /* ThirdViewModel.swift in Sources */,
 				347274EF1C8D850500684DBC /* FourthModel.swift in Sources */,
@@ -915,7 +908,6 @@
 				347274C91C8D616100684DBC /* UITableViewCell+Extension.swift in Sources */,
 				347274DF1C8D757600684DBC /* FirstModel.swift in Sources */,
 				347272E61C8D512600684DBC /* SMKBaseCollectionViewManger.swift in Sources */,
-				3416928F1C8E76680047B11E /* UIViewConrtroller+Extension.swift in Sources */,
 				347273581C8D545A00684DBC /* AppDelegate.swift in Sources */,
 				347274F71C8D869700684DBC /* BQCollectionCell.swift in Sources */,
 				347274CD1C8D690100684DBC /* UITableView+Extension.swift in Sources */,
