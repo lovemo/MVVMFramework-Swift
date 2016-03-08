@@ -1,0 +1,6 @@
+framework module SUIMVVMNetwork {
+  umbrella header "SUIMVVMNetwork-umbrella.h"
+
+  export *
+  module * { export * }
+}

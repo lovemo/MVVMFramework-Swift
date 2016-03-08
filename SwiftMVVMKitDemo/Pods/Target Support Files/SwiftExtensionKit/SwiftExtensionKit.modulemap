@@ -1,0 +1,6 @@
+framework module SwiftExtensionKit {
+  umbrella header "SwiftExtensionKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

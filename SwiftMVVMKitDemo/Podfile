@@ -1,0 +1,12 @@
+platform :ios, '8.0'
+use_frameworks!
+
+pod 'AFNetworking'
+pod 'FDFullscreenPopGesture'
+pod 'MJExtension'
+pod 'SUIMVVMNetwork' 
+pod 'MJRefresh'
+pod 'SwiftExtensionKit'
+
+source 'https://github.com/CocoaPods/Specs.git'
+pod 'SnapKit'
