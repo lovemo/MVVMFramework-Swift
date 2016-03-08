@@ -7,13 +7,12 @@ Pod::Spec.new do |s|
     s.license               = 'MIT'
     s.author                = { 'lovemo' => 'lovemomoyulin@qq.com' }
     s.source                = { :git => 'https://github.com/lovemo/MVVMFramework-Swift.git',:tag => s.version.to_s }
+    s.source_files     = 'SwiftMVVMKit/**/*'
     s.requires_arc          = true
-    s.source_files  = 'SwiftMVVMKit/**/*'
-    s.framework             = 'Foundation', 'CoreGraphics', 'UIKit'
+    s.frameworks             = 'Foundation', 'UIKit'
 
-    s.subspec 'SwiftMVVMKit' do |ss|
-    ss.requires_arc = true
-    s.source_files  = 'SwiftMVVMKit/**/*'
-    end
+    s.dependency 'MJRefresh'
+    s.dependency 'UITableView+FDTemplateLayoutCell'
+
 
 end
