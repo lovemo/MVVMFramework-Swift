@@ -65,5 +65,12 @@ import UIKit
      使子视图更新到最新的布局约束或者frame
      */
     optional func smk_viewMangerWithUpdateLayoutSubViews()
+
+    /**
+     将model数据传递给viewManger
+     
+     - parameter dictBlock: dictBlock description
+     */
+    optional func viewMangerWithModel(dictBlock: (( ) -> [NSObject : AnyObject]?)?)
 }
 

@@ -22,7 +22,9 @@ class ThirdVC: UIViewController {
     }
     
     @IBAction func clickBtnAction(sender: UIButton) {
-        self.thirdViewManger.smk_model = self.viewModel.getRandomData()
+        self.thirdViewManger.viewMangerWithModel { () -> [NSObject : AnyObject]? in
+            return ["model": self.viewModel.getRandomData()!]
+        }
     }
 
 }

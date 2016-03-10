@@ -9,23 +9,20 @@
 import UIKit
 import SwiftExtensionKit
 
-class ThirdViewManger: SMKBaseViewManger, SMKViewProtocolDelegate {
+class ThirdViewManger: NSObject, SMKViewMangerProtocolDelegate, SMKViewProtocolDelegate {
     
     lazy var thirdView = ThirdView.loadInstanceFromNib() as? ThirdView
+    lazy var dict = [ : ]
     
     override init() {
         super.init()
-        thirdView?.delegate = self
-    }
-    
-    // 两种消息传递方式，开发时任选其一即可，处理View中自定义的事件
-    override func smk_viewMangerWithSubView(subView: UIView?) {
         
+        thirdView?.delegate = self
         // btnClickBlock
         thirdView?.viewEventsBlock = { (events: AnyObject...) -> ( ) in
-                for event in events {
-                    print(event)
-                }
+            for event in events {
+                print(event)
+            }
             self.smk_viewMangerWithHandleOfSubView(self.thirdView!, info: "click")
         }
     }
@@ -52,8 +49,15 @@ class ThirdViewManger: SMKBaseViewManger, SMKViewProtocolDelegate {
     // 根据传入的info设置添加subView的事件
     func smk_viewMangerWithHandleOfSubView(subView: UIView, info: String?) {
         if info == "click" {
-            subView.configureViewWithCustomObj(smk_model)
+            subView.configureViewWithCustomObj(dict["model"] as? NSObject)
         }
     }
+    // 得到传入的模型数据
+    func viewMangerWithModel(dictBlock: (() -> [NSObject : AnyObject]?)?) {
+        if let _ = dictBlock {
+            dict = dictBlock!()!
+        }
+    }
+    
 
 }

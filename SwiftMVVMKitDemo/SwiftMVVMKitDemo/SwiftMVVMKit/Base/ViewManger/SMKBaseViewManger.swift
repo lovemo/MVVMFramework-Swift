@@ -13,12 +13,4 @@ class SMKBaseViewManger: NSObject, SMKViewMangerProtocolDelegate {
     /// 用于传递数据的基模型
     var smk_model: NSObject?
     
-    override init() {
-        super.init()
-        self.smk_viewMangerWithSubView(nil)
-    }
-    
-    func smk_viewMangerWithSubView(subView: UIView?) {
-        
-    }
 }
