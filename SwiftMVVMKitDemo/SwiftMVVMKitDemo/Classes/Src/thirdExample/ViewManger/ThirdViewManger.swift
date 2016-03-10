@@ -22,7 +22,10 @@ class ThirdViewManger: SMKBaseViewManger, SMKViewProtocolDelegate {
     override func smk_viewMangerWithSubView(subView: UIView?) {
         
         // btnClickBlock
-        thirdView?.clickBlock = {
+        thirdView?.viewEventsBlock = { (events: AnyObject...) -> ( ) in
+                for event in events {
+                    print(event)
+                }
             self.smk_viewMangerWithHandleOfSubView(self.thirdView!, info: "click")
         }
     }

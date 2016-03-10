@@ -58,6 +58,7 @@
 		347273751C8D545A00684DBC /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 347273511C8D545A00684DBC /* Foundation+Log.m */; };
 		347274D11C8D6B8500684DBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 347274D01C8D6B8500684DBC /* Main.storyboard */; };
 		347274E31C8D783600684DBC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 347274E21C8D783600684DBC /* Images.xcassets */; };
+		34C7BAE51C91209900833B60 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C7BAE41C91209900833B60 /* UIView+Extension.swift */; };
 		75DF62058BFE0811181304E5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3041205DE2D15485DFFA4E02 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +128,7 @@
 		347273561C8D545A00684DBC /* SDKFilePublicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKFilePublicHeader.h; sourceTree = "<group>"; };
 		347274D01C8D6B8500684DBC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		347274E21C8D783600684DBC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../../Images.xcassets; sourceTree = "<group>"; };
+		34C7BAE41C91209900833B60 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		9384533C28CD2B5533FEEDD1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		AC1E527310BADAA5220AC2FC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -217,6 +219,7 @@
 				341692C01C8E95C60047B11E /* UITableView+Extension.swift */,
 				341692C11C8E95C60047B11E /* UITableViewCell+Extension.swift */,
 				341692C21C8E95C60047B11E /* UIView+Configure.swift */,
+				34C7BAE41C91209900833B60 /* UIView+Extension.swift */,
 			);
 			path = Extend;
 			sourceTree = "<group>";
@@ -845,6 +848,7 @@
 				3416932F1C8EB1350047B11E /* FourthView2.swift in Sources */,
 				3416933D1C8EB1350047B11E /* ThirdViewManger.swift in Sources */,
 				341693341C8EB1350047B11E /* SecondVC.swift in Sources */,
+				34C7BAE51C91209900833B60 /* UIView+Extension.swift in Sources */,
 				3416932A1C8EB1350047B11E /* BQViewModel.swift in Sources */,
 				3416933E1C8EB1350047B11E /* ThirdViewModel.swift in Sources */,
 				341692D31C8E95C60047B11E /* SMKViewProtocolDelegate.swift in Sources */,

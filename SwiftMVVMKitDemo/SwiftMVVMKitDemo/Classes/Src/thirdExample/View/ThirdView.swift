@@ -8,16 +8,9 @@
 
 import UIKit
 
-typealias btnClickBlock = ( ) -> Void
-
 class ThirdView: UIView {
 
     @IBOutlet weak var testLabel: UILabel!
-    internal var clickBlock: btnClickBlock?
-
-    override func awakeFromNib() {
-        self.backgroundColor = UIColor.init(colorLiteralRed: 0.914, green: 1.000, blue: 0.604, alpha: 1.000)
-    }
     
     // 按钮事件 <自定义方法>
     @IBAction func testBtnClick(sender: UIButton) {
@@ -28,8 +21,8 @@ class ThirdView: UIView {
 //            }
 //        }
         // 传递事件
-        if let _ = clickBlock {
-            clickBlock!()
+        if let _ = viewEventsBlock {
+            viewEventsBlock!(events: "clicked","me")
         }
     }
 

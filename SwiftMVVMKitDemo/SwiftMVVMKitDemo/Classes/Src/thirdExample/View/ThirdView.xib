@@ -46,7 +46,7 @@
                     </variation>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="0.75326538409999999" blue="0.36956529310000003" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="sCf-XP-Kv9" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.4" id="1LN-QM-W1i"/>
                 <constraint firstAttribute="trailing" secondItem="Z2F-um-ZgX" secondAttribute="trailing" constant="5" id="3n2-Bg-Sxv"/>

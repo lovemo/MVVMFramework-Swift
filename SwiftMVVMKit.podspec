@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name                  = 'SwiftMVVMKit'
-    s.version      = '0.0.3'
+    s.version      = '0.0.4'
     s.summary               = 'SwiftMVVMKit is a MVVM frameWork easy to develop iOS'
     s.homepage              = 'https://github.com/lovemo/MVVMFramework-Swift'
     s.platform     = :ios, '8.0'

@@ -10,6 +10,8 @@ import Foundation
 
 @objc public protocol SMKViewModelProtocolDelegate: NSObjectProtocol {
     
+    
+    
     /**
      返回指定indexPath的item
      
