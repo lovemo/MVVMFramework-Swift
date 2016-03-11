@@ -9,7 +9,9 @@
 import UIKit
 import SUIMVVMNetwork
 
-class ThirdViewModel: SMKBaseViewModel {
+class ThirdViewModel: NSObject, SMKViewModelProtocolDelegate {
+    
+    lazy var smk_dataArrayList = []
     
     internal func getRandomData() -> NSObject? {
         if smk_dataArrayList.count > 0 {
@@ -19,16 +21,15 @@ class ThirdViewModel: SMKBaseViewModel {
         return nil
     }
     
-    override func smk_viewModelWithGetDataSuccessHandler(successHandler: (() -> ())?) {
+     func smk_viewModelWithGetDataSuccessHandler(successHandler: ((array: [AnyObject]) -> ())?) {
         let url = "http://news-at.zhihu.com/api/4/news/latest"
         SMKHttp.get(url, params: nil, success: { (json: AnyObject!) -> Void in
-            
             let array = json["stories"]
             self.smk_dataArrayList = ThirdModel.mj_objectArrayWithKeyValuesArray(array)
             if let _ = successHandler {
-                successHandler!()
+                successHandler!(array: self.smk_dataArrayList as [AnyObject])
             }
-            }) { (error: NSError!) -> Void in
+            }) { (_) -> Void in
                 
         }
 

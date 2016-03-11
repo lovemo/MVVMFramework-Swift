@@ -13,6 +13,7 @@ let MyCellIdentifier2 = "BQCollectionCell" // `cellIdentifier` AND `NibName` HAS
 class SecondVC: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    lazy var viewModel = BQViewModel2()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +44,15 @@ class SecondVC: UIViewController {
         }
         
         // 将上述block设置给collectionHander  // 可用自定义UICollectionViewLayout
-        self.collectionView.collectionHander = SMKBaseCollectionViewManger.init(viewModel: BQViewModel2(), cellIdentifiers: [MyCellIdentifier2], collectionViewLayout: UICollectionViewFlowLayout(), cellItemSizeBlock: cellItemSizeBlock, cellItemMarginBlock: cellItemMarginBlock, didSelectBlock: selectedBlock)
+        self.collectionView.collectionHander = SMKBaseCollectionViewManger(cellIdentifiers: [MyCellIdentifier2], collectionViewLayout: UICollectionViewFlowLayout(), cellItemSizeBlock: cellItemSizeBlock, cellItemMarginBlock: cellItemMarginBlock, didSelectBlock: selectedBlock)
+        
+        viewModel.smk_viewModelWithGetDataSuccessHandler { (array) -> () in
+            self.collectionView.collectionHander.getItemsWithModelArray({ () -> [AnyObject] in
+                    return array
+                }, completion: { () -> () in
+                    self.collectionView.reloadData()
+            })
+        }
     }
     
 }

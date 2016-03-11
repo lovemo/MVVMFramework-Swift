@@ -10,27 +10,25 @@ import UIKit
 import SUIMVVMNetwork
 import MJExtension
 
-class BQViewModel2: SMKBaseViewModel {
+class BQViewModel2: NSObject, SMKViewModelProtocolDelegate {
 
-    override func smk_viewModelWithNumberOfItemsInSection(section: Int) -> Int {
-        return smk_dataArrayList.count
-    }
-    
-    override func smk_viewModelWithGetDataSuccessHandler(successHandler: (() -> ())?) {
+    func smk_viewModelWithGetDataSuccessHandler(successHandler: ((array: [AnyObject]) -> ())?) {
         let url = "http://news-at.zhihu.com/api/4/news/latest"
         SMKHttp.get(url, params: nil, success: { (json: AnyObject!) -> Void in
+            
             let array = json["stories"]
             BQTestModel.mj_setupReplacedKeyFromPropertyName({ () -> [NSObject : AnyObject]! in
                 return ["ID": "id"]
             })
-            self.smk_dataArrayList = BQTestModel.mj_objectArrayWithKeyValuesArray(array)
+            let models = BQTestModel.mj_objectArrayWithKeyValuesArray(array)
             if let _ = successHandler {
-                successHandler!()
+                successHandler!(array: models as [AnyObject])
             }
-            }) { (error: NSError!) -> Void in
+
+            }) { (_) -> Void in
                 
         }
-
+    
     }
     
 }

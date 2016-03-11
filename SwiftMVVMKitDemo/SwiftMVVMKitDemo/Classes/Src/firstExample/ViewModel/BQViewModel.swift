@@ -9,18 +9,15 @@
 import UIKit
 import SUIMVVMNetwork
 
-class BQViewModel: SMKBaseViewModel {
+class BQViewModel: NSObject, SMKViewModelProtocolDelegate {
 
-    override func smk_viewModelWithNumberOfRowsInSection(section: Int) -> Int {
-        return smk_dataArrayList.count
-    }
-    override func smk_viewModelWithGetDataSuccessHandler(successHandler: (() -> ())?) {
+    func smk_viewModelWithGetDataSuccessHandler(successHandler: ((array: [AnyObject]) -> ())?) {
         let url = "http://news-at.zhihu.com/api/4/news/latest"
         SMKHttp.get(url, params: nil, success: { (json: AnyObject!) -> Void in
             let array = json["stories"]
-            self.smk_dataArrayList = FirstModel.mj_objectArrayWithKeyValuesArray(array)
+            let models = FirstModel.mj_objectArrayWithKeyValuesArray(array)
             if let _ = successHandler {
-                successHandler!()
+                successHandler!(array: models as [AnyObject])
             }
             }) { (error: NSError!) -> Void in
                 

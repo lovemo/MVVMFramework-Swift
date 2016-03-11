@@ -10,7 +10,14 @@ import Foundation
 
 @objc public protocol SMKViewModelProtocolDelegate: NSObjectProtocol {
     
-    
+    /**
+     用来判断是否加载成功,方便外部根据不同需求处理 (外部使用)
+     
+     - parameter successHandler: successHandler description
+     
+     - returns: return value description
+     */
+    optional func smk_viewModelWithGetDataSuccessHandler(successHandler: ((array: [AnyObject]) -> ( ))?) -> Void
     
     /**
      返回指定indexPath的item

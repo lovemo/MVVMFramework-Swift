@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MJRefresh
 import UITableView_FDTemplateLayoutCell
 
 /// 选中UITableViewCell的Block
@@ -19,21 +18,19 @@ typealias didSelectTableCellBlock = (NSIndexPath, AnyObject) -> Void
 class SMKBaseTableViewManger: NSObject, UITableViewDelegate, UITableViewDataSource {
     
     lazy var myCellIdentifiers =  [String]()
+    lazy var smk_dataArrayList = []
     var didSelectCellBlock: didSelectTableCellBlock?
-    var viewModel: SMKBaseViewModel?
     
     /**
      初始化方法
      
-     - parameter viewModel:       viewModel
      - parameter aCellIdentifier: aCellIdentifier
      - parameter didselectBlock:  didselectBlock
      
      - returns: return value description
      */
-    init(viewModel: SMKBaseViewModel?, cellIdentifiers: [String], didSelectBlock: didSelectTableCellBlock) {
+    init(cellIdentifiers: [String], didSelectBlock: didSelectTableCellBlock) {
         super.init()
-        self.viewModel = viewModel
         self.myCellIdentifiers = cellIdentifiers
         self.didSelectCellBlock = didSelectBlock
     }
@@ -48,26 +45,22 @@ class SMKBaseTableViewManger: NSObject, UITableViewDelegate, UITableViewDataSour
         table.dataSource = self
         table.delegate   = self
 
-        // 第一次刷新数据
-        viewModel?.smk_viewModelWithGetDataSuccessHandler({ [weak table] () -> () in
-            if let strongTable = table {
-                strongTable.reloadData()
-            }
-        })
-        
-        // 下拉刷新
-       table.mj_header = MJRefreshNormalHeader { [weak self] () -> Void in
-            if let strongSelf = self {
-                strongSelf.viewModel?.smk_viewModelWithGetDataSuccessHandler({ [weak table] () -> () in
-                        if let strongTable = table {
-                            strongTable.reloadData()
-                        }
-                    })
-                    // 结束刷新
-                    table.mj_header.endRefreshing()
+    }
+    
+     /**
+     获取模型数组
+     
+     - parameter modelArrayBlock: 返回模型数组Block
+     - parameter completion:      获取数据完成时
+     */
+    func getItemsWithModelArray(modelArrayBlock:( () -> [AnyObject] )?, completion: (() -> ())?) -> Void {
+        if let _ = modelArrayBlock {
+            smk_dataArrayList = modelArrayBlock!()
+            if let _ = completion {
+                completion!()
             }
         }
-        table.mj_header.automaticallyChangeAlpha = true
+
     }
     
     /**
@@ -78,7 +71,7 @@ class SMKBaseTableViewManger: NSObject, UITableViewDelegate, UITableViewDataSour
      - returns: return value description
      */
     func itemAtIndexPath(indexPath: NSIndexPath) -> AnyObject {
-            return viewModel!.smk_dataArrayList[indexPath.row];
+            return smk_dataArrayList[indexPath.row];
     }
     
     // MARK: - UITableViewDataSource
@@ -87,7 +80,7 @@ class SMKBaseTableViewManger: NSObject, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel!.smk_viewModelWithNumberOfRowsInSection(section)
+        return smk_dataArrayList.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

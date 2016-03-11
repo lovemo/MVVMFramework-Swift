@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MJRefresh
 
 /// 选中UICollectionViewCell的Block
 typealias didSelectCollectionCellBlock = (NSIndexPath, AnyObject) -> Void
@@ -22,17 +21,16 @@ typealias cellItemMargin = ( ) -> UIEdgeInsets
 // - - - - - -- - - - - - - - -- - - - 创建类 - -- - - - - -- -- - - - - -- - - -//
 class SMKBaseCollectionViewManger: NSObject, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
+    lazy var smk_dataArrayList = []
     var myCellIdentifiers = [String]()
     var collectionViewLayout: UICollectionViewLayout
     var didSelectCellBlock: didSelectCollectionCellBlock
     var itemSize: cellItemSize
     var itemMargin: cellItemMargin
-    var viewModel: SMKBaseViewModel
     
     /**
      初始化方法
      
-     - parameter viewModel:            viewModel description
      - parameter cellIdentifiers:      cellIdentifiers description
      - parameter collectionViewLayout: collectionViewLayout description
      - parameter itemSize:             itemSize description
@@ -41,9 +39,8 @@ class SMKBaseCollectionViewManger: NSObject, UICollectionViewDelegate, UICollect
      
      - returns: return value description
      */
-    init(viewModel: SMKBaseViewModel, cellIdentifiers: [String], collectionViewLayout: UICollectionViewLayout, cellItemSizeBlock itemSize: cellItemSize, cellItemMarginBlock itemMargin: cellItemMargin, didSelectBlock didselectBlock: didSelectCollectionCellBlock) {
+    init(cellIdentifiers: [String], collectionViewLayout: UICollectionViewLayout, cellItemSizeBlock itemSize: cellItemSize, cellItemMarginBlock itemMargin: cellItemMargin, didSelectBlock didselectBlock: didSelectCollectionCellBlock) {
         
-        self.viewModel = viewModel
         self.myCellIdentifiers = cellIdentifiers
         self.collectionViewLayout = collectionViewLayout
         self.itemSize = itemSize
@@ -77,7 +74,7 @@ class SMKBaseCollectionViewManger: NSObject, UICollectionViewDelegate, UICollect
      - returns: return value description
      */
     func itemAtIndexPath(indexPath: NSIndexPath) -> AnyObject {
-        return self.viewModel.smk_dataArrayList[indexPath.item]
+        return smk_dataArrayList[indexPath.item]
     }
     
     /**
@@ -89,28 +86,22 @@ class SMKBaseCollectionViewManger: NSObject, UICollectionViewDelegate, UICollect
         collection.collectionViewLayout = self.collectionViewLayout
         collection.dataSource = self
         collection.delegate     = self
-        
-
-        // 第一次刷新数据
-        viewModel.smk_viewModelWithGetDataSuccessHandler { [weak collection] () -> () in
-            if let strongCollection = collection {
-                strongCollection.reloadData()
+    }
+    
+    /**
+     获取模型数组
+     
+     - parameter modelArrayBlock: 返回模型数组Block
+     - parameter completion:      获取数据完成时
+     */
+    func getItemsWithModelArray(modelArrayBlock:( () -> [AnyObject] )?, completion: (() -> ())?) -> Void {
+        if let _ = modelArrayBlock {
+            smk_dataArrayList = modelArrayBlock!()
+            if let _ = completion {
+                completion!()
             }
         }
         
-        // 下拉刷新
-        collection.mj_header = MJRefreshNormalHeader { [weak self] () -> Void in
-            if let strongSelf = self {
-                    strongSelf.viewModel.smk_viewModelWithGetDataSuccessHandler { [weak collection] () -> () in
-                        if let strongCollection = collection {
-                            strongCollection.reloadData()
-                        }
-                    }
-                    // 结束刷新
-                    collection.mj_header.endRefreshing()
-            }
-        }
-        collection.mj_header.automaticallyChangeAlpha = true
     }
     
     // MARK: -  UICollectionViewDelegateFlowLayout
@@ -132,7 +123,7 @@ class SMKBaseCollectionViewManger: NSObject, UICollectionViewDelegate, UICollect
     
     // MARK: -  UICollectionViewDelegate && UICollectionViewDataSourse
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.viewModel.smk_viewModelWithNumberOfItemsInSection(section)
+        return smk_dataArrayList.count
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
