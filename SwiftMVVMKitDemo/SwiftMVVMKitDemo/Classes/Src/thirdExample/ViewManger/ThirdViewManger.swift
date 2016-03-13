@@ -52,8 +52,9 @@ class ThirdViewManger: NSObject, SMKViewMangerProtocolDelegate, SMKViewProtocolD
             subView.configureViewWithCustomObj(dict["model"] as? NSObject)
         }
     }
+    
     // 得到传入的模型数据
-    func viewMangerWithModel(dictBlock: (() -> [NSObject : AnyObject]?)?) {
+    func smk_viewMangerWithModel(dictBlock: (() -> [NSObject : AnyObject]?)?) {
         if let _ = dictBlock {
             dict = dictBlock!()!
         }

@@ -71,6 +71,6 @@ import UIKit
      
      - parameter dictBlock: dictBlock description
      */
-    optional func viewMangerWithModel(dictBlock: (( ) -> [NSObject : AnyObject]?)?)
+    optional func smk_viewMangerWithModel(dictBlock: (( ) -> [NSObject : AnyObject]?)?)
 }
 
