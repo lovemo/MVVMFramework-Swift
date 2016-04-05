@@ -203,6 +203,7 @@ class FourthViewManger2: NSObject, SMKViewMangerProtocolDelegate {
 * 如果在使用过程中发现功能不够用，希望你能Issues我，我非常想为这个框架增加更多好用的功能，谢谢
 
 ## 推荐-几篇不错的MVVM学习文章
+* [面向协议的 MVVM 架构介绍](https://realm.io/cn/news/doios-natasha-murashev-protocol-oriented-mvvm/)
 * [MVVM With ReactiveCocoa](http://www.cocoachina.com/ios/20160330/15823.html)
 * [#1 更轻量的 View Controllers](http://objccn.io/issue-1/)
 * [MVVM 介绍](http://objccn.io/issue-13-1/)
