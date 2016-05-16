@@ -2,6 +2,7 @@
 ###OC版本地址：https://github.com/lovemo/MVVMFramework
 ####本项目交流群：474292335
 ####欢迎有兴趣的有好的想法的参与到项目中来
+####[获取更多MVVM推荐文章](#Recommend)
 ===
 总结整理下一个快速开发MVVM框架(抛砖引玉)，主要用于分离控制器中的代码，降低代码耦合程度，可以根据自己使用习惯调整代码。欢迎来喷，提issues。代码加入了cell自适应高度,自动缓存网络请求至sqlite数据库，更加高效的数据库存储库。
 
@@ -202,7 +203,7 @@ class FourthViewManger2: NSObject, SMKViewMangerProtocolDelegate {
 * 如果在使用过程中遇到BUG，希望你能Issues我，谢谢（或者尝试下载最新的代码看看BUG修复没有）
 * 如果在使用过程中发现功能不够用，希望你能Issues我，我非常想为这个框架增加更多好用的功能，谢谢
 
-## 推荐
+## 推荐(欢迎补充)<a id="Recommend"></a>
 ###应用架构文章
 #####部分来自原创微信公众平台-移动开发前线
 * [糯米移动组件架构演进之路](http://top.caibaojian.com/t?url=http://t.cn/RqRDJIe)
