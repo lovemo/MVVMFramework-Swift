@@ -1,12 +1,14 @@
 # MVVMFramework-Swift
-###OC版本地址：https://github.com/lovemo/MVVMFramework
-####本项目交流群：474292335
-####欢迎有兴趣的有好的想法的参与到项目中来
-####[获取更多MVVM推荐文章](#Recommend)
-===
+### OC版本地址：https://github.com/lovemo/MVVMFramework
+#### 本项目交流群：474292335
+#### 欢迎有兴趣的有好的想法的参与到项目中来
+#### [获取更多MVVM推荐文章](#Recommend)
+
+---
+
 总结整理下一个快速开发MVVM框架(抛砖引玉)，主要用于分离控制器中的代码，降低代码耦合程度，可以根据自己使用习惯调整代码。欢迎来喷，提issues。代码加入了cell自适应高度,自动缓存网络请求至sqlite数据库，更加高效的数据库存储库。
 
-####usage:
+#### usage:
 CocoaPods：
 ```
 	platform :ios, '8.0'
@@ -15,7 +17,7 @@ CocoaPods：
 
 ```
 
-##思维流程图示
+## 思维流程图示
 ![image](https://github.com/lovemo/MVVMFramework/raw/master/resources/MVVMFrameWork-Thinking.png)
 ![image](https://github.com/lovemo/MVVMFramework/raw/master/resources/MVVMFrameWork-Thinking2.jpeg)
 ##现在的工程代码结构
@@ -45,7 +47,7 @@ CocoaPods：
 
 ---
 
-##部分protocol示例
+## 部分protocol示例
 ```swift
 @objc public protocol SMKViewMangerProtocolDelegate: NSObjectProtocol {
 
@@ -204,8 +206,8 @@ class FourthViewManger2: NSObject, SMKViewMangerProtocolDelegate {
 * 如果在使用过程中发现功能不够用，希望你能Issues我，我非常想为这个框架增加更多好用的功能，谢谢
 
 ## 推荐(欢迎补充)<a id="Recommend"></a>
-###应用架构文章
-#####部分来自原创微信公众平台-移动开发前线
+### 应用架构文章
+##### 部分来自原创微信公众平台-移动开发前线
 * [Service Oriented 的 iOS 应用架构](http://www.cocoachina.com/ios/20160520/16363.html)
 * [新浪微博iOS客户端架构与优化之路](http://chuansong.me/n/335912751245)
 * [糯米移动组件架构演进之路](http://top.caibaojian.com/t?url=http://t.cn/RqRDJIe)
@@ -231,7 +233,7 @@ class FourthViewManger2: NSObject, SMKViewMangerProtocolDelegate {
 * [QCon旧金山演讲总结：阿里无线技术架构演进](http://www.infoq.com/cn/articles/alibaba-mobile-infrastructure)
 
 
-###MVVM学习文章
+### MVVM学习文章
 * [MVVM奇葩说](http://www.cocoachina.com/ios/20160520/16004.html)
 * [面向协议的 MVVM 架构介绍](https://realm.io/cn/news/doios-natasha-murashev-protocol-oriented-mvvm/)
 * [MVVM With ReactiveCocoa](http://www.cocoachina.com/ios/20160330/15823.html)
